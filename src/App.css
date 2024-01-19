@@ -1,0 +1,30 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 15px 0px 15px;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+.add-todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 15px 0px 15px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+.todo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid black;
+  border-radius: 12px;
+  width: 270px;
+  padding-left: 30px;
+}
