@@ -13,7 +13,9 @@ function Main({ contents, setContents }) {
   const doneBtn = (id) => {
     const check = contents.map((obj) => {
       if (id === obj.id) {
-        return { ...obj, isDone: true };
+        const changeContent = { ...obj, isDone: true };
+        localStorage.setItem(id, JSON.stringify(changeContent));
+        return changeContent;
       } else {
         return { ...obj };
       }
@@ -24,7 +26,9 @@ function Main({ contents, setContents }) {
   const cancleBtn = (id) => {
     const check = contents.map((obj) => {
       if (id === obj.id) {
-        return { ...obj, isDone: false };
+        const changeContent = { ...obj, isDone: false };
+        localStorage.setItem(id, JSON.stringify(changeContent));
+        return changeContent;
       } else {
         return { ...obj };
       }
