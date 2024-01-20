@@ -5,6 +5,8 @@ function Main({ contents, setContents }) {
     const newContents = contents.filter((todo) => {
       return todo.id !== id;
     });
+    localStorage.removeItem(id);
+    console.log(id);
     setContents(newContents);
   };
 
@@ -32,7 +34,7 @@ function Main({ contents, setContents }) {
 
   return (
     <main>
-      <section>
+      <section className="todolist">
         <h2>Working...🔥🔥</h2>
         <ul className="card-list">
           {contents.map((i) => {
@@ -44,8 +46,12 @@ function Main({ contents, setContents }) {
                 <h3>{i.title}</h3>
                 <p>{i.content}</p>
                 <p className="todo-btn">
-                  <button onClick={() => deleteTodo(i.id)}>삭제하기</button>
-                  <button onClick={() => doneBtn(i.id)}>완료</button>
+                  <button className="del-btn" onClick={() => deleteTodo(i.id)}>
+                    삭제하기
+                  </button>
+                  <button className="done-btn" onClick={() => doneBtn(i.id)}>
+                    완료
+                  </button>
                   <p>{i.isDone}</p>
                 </p>
               </li>
@@ -63,8 +69,15 @@ function Main({ contents, setContents }) {
                 <h3>{i.title}</h3>
                 <p>{i.content}</p>
                 <p className="todo-btn">
-                  <button onClick={() => deleteTodo(i.id)}>삭제하기</button>
-                  <button onClick={() => cancleBtn(i.id)}>취소</button>
+                  <button className="del-btn" onClick={() => deleteTodo(i.id)}>
+                    삭제하기
+                  </button>
+                  <button
+                    className="cancle-btn"
+                    onClick={() => cancleBtn(i.id)}
+                  >
+                    취소
+                  </button>
                   <p>{i.isDone}</p>
                 </p>
               </li>

@@ -23,8 +23,14 @@ function Header({ contents, setContents }) {
         content,
         isDone: false,
       };
+      console.log(newTodo);
 
-      setContents([...contents, newTodo]);
+      localStorage.setItem(`${newTodo.id}`, JSON.stringify(newTodo));
+
+      const localStorageItem = JSON.parse(localStorage.getItem(newTodo.id));
+      console.log(localStorageItem);
+
+      setContents([...contents, localStorageItem]);
       setTitle("");
       setContent("");
     }
@@ -33,16 +39,26 @@ function Header({ contents, setContents }) {
     <header>
       <section className="title">
         <p>My Todo List</p>
-        <p>React</p>
+        <p>정해준</p>
       </section>
       <section className="add-todo">
         <p>
-          제목
-          <input value={title} onChange={titleChangeEvent} />
-          내용
-          <input value={content} onChange={contentChangeEvent} />
+          제목:&nbsp;
+          <input
+            className="title-input"
+            value={title}
+            onChange={titleChangeEvent}
+          />
+          &nbsp; 내용:&nbsp;
+          <input
+            className="content-input"
+            value={content}
+            onChange={contentChangeEvent}
+          />
         </p>
-        <button onClick={addBtnEvent}>추가하기</button>
+        <button className="add-btn" onClick={addBtnEvent}>
+          추가하기
+        </button>
       </section>
     </header>
   );

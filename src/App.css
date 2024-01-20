@@ -1,11 +1,65 @@
+:root {
+  --primary-100: #0d6e6e;
+  --primary-200: #4a9d9c;
+  --primary-300: #afffff;
+  --accent-100: #ff3d3d;
+  --accent-200: #ffe0c8;
+  --text-100: #ffffff;
+  --text-200: #e0e0e0;
+  --bg-100: #0d1f2d;
+  --bg-200: #1d2e3d;
+  --bg-300: #354656;
+}
+
+body {
+  background-color: var(--bg-100);
+}
+
+h2 {
+  color: var(--text-200);
+  margin-left: 15px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: minmax(800px, 1200px);
+  justify-content: center;
+}
+
 .title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 5px 15px 0px 15px;
   padding: 0px 10px 0px 10px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 12px;
+  color: var(--text-200);
+  background-color: var(--bg-200);
+  font-weight: bolder;
+}
+
+.title-input {
+  width: 200px;
+  height: 30px;
+  border-radius: 12px;
+  background-color: var(--primary-300);
+}
+
+.content-input {
+  width: 300px;
+  height: 30px;
+  border-radius: 12px;
+  background-color: var(--primary-300);
+}
+
+.add-btn {
+  border-radius: 8px;
+  background-color: var(--accent-200);
+  font-weight: bolder;
+  border: 5px solid var(--accent-200);
+  height: 50px;
+  margin-top: 8px;
 }
 
 .add-todo {
@@ -14,8 +68,21 @@
   justify-content: space-between;
   margin: 5px 15px 0px 15px;
   padding: 5px 10px 5px 10px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 12px;
+  color: var(--text-100);
+  background-color: var(--bg-200);
+}
+
+.todolist {
+  border-radius: 12px;
+  background-color: var(--bg-300);
+  margin: 0px;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .todo-card {
@@ -23,13 +90,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  border: 1px solid black;
+  border: 1px solid var(--bg-200);
   border-radius: 12px;
   width: 270px;
   padding-left: 30px;
+  background-color: var(--primary-100);
+  color: var(--text-200);
+  margin-bottom: 10px;
 }
 
-.card-list {
-  display: flex;
-  flex-direction: row;
+.todo-btn {
+  margin: 0px 50px 0px 50px;
+}
+
+.del-btn {
+  border-radius: 8px;
+  border: 5px solid var(--accent-100);
+  background-color: var(--accent-100);
+  font-weight: bolder;
+  margin-right: 10px;
+}
+
+.done-btn {
+  border-radius: 8px;
+  border: 5px solid var(--accent-200);
+  background-color: var(--accent-200);
+  font-weight: bolder;
+}
+
+.cancle-btn {
+  border-radius: 8px;
+  border: 5px solid var(--accent-200);
+  background-color: var(--accent-200);
+  font-weight: bolder;
 }
