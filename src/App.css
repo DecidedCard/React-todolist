@@ -93,10 +93,10 @@ h2 {
   border: 1px solid var(--bg-200);
   border-radius: 12px;
   width: 270px;
-  padding-left: 30px;
   background-color: var(--primary-100);
   color: var(--text-200);
   margin-bottom: 10px;
+  padding: 0px 10px 0px 10px;
 }
 
 .todo-btn {
