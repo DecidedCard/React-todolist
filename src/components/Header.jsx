@@ -13,7 +13,8 @@ function Header({ contents, setContents }) {
     setContent(event.target.value);
   };
 
-  const addBtnEvent = () => {
+  const addSubmitEvent = (event) => {
+    event.preventDefault();
     if (title === "" && content === "") {
       document.querySelector(".check-content").style.display = "block";
     } else {
@@ -43,7 +44,7 @@ function Header({ contents, setContents }) {
         <p>정해준</p>
       </section>
       <section className="add-todo">
-        <p className="content-add">
+        <form className="content-add" onSubmit={addSubmitEvent}>
           <p>
             제목:&nbsp;
             <input
@@ -58,10 +59,8 @@ function Header({ contents, setContents }) {
               onChange={contentChangeEvent}
             />
           </p>
-          <button className="add-btn" onClick={addBtnEvent}>
-            추가하기
-          </button>
-        </p>
+          <button className="add-btn">추가하기</button>
+        </form>
         <p className="check-content">내용을 입력해주시기 바랍니다.</p>
       </section>
     </header>
