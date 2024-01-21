@@ -41,7 +41,7 @@ function Header({ contents, setContents }) {
     <header>
       <section className="title">
         <p>My Todo List</p>
-        <p>정해준</p>
+        <p>React</p>
       </section>
       <section className="add-todo">
         <form className="content-add" onSubmit={addSubmitEvent}>
