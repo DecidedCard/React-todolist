@@ -15,8 +15,9 @@ function Header({ contents, setContents }) {
 
   const addBtnEvent = () => {
     if (title === "" && content === "") {
-      alert("내용을 입력하셔야 합니다.");
+      document.querySelector(".check-content").style.display = "block";
     } else {
+      document.querySelector(".check-content").style.display = "none";
       const newTodo = {
         id: contents.length + 1,
         title,
@@ -42,23 +43,26 @@ function Header({ contents, setContents }) {
         <p>정해준</p>
       </section>
       <section className="add-todo">
-        <p>
-          제목:&nbsp;
-          <input
-            className="title-input"
-            value={title}
-            onChange={titleChangeEvent}
-          />
-          &nbsp; 내용:&nbsp;
-          <input
-            className="content-input"
-            value={content}
-            onChange={contentChangeEvent}
-          />
+        <p className="content-add">
+          <p>
+            제목:&nbsp;
+            <input
+              className="title-input"
+              value={title}
+              onChange={titleChangeEvent}
+            />
+            &nbsp; 내용:&nbsp;
+            <input
+              className="content-input"
+              value={content}
+              onChange={contentChangeEvent}
+            />
+          </p>
+          <button className="add-btn" onClick={addBtnEvent}>
+            추가하기
+          </button>
         </p>
-        <button className="add-btn" onClick={addBtnEvent}>
-          추가하기
-        </button>
+        <p className="check-content">내용을 입력해주시기 바랍니다.</p>
       </section>
     </header>
   );
