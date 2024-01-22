@@ -56,7 +56,6 @@ function Main({ contents, setContents }) {
                   <button className="done-btn" onClick={() => doneBtn(i.id)}>
                     완료
                   </button>
-                  <p>{i.isDone}</p>
                 </p>
               </li>
             );
@@ -82,7 +81,6 @@ function Main({ contents, setContents }) {
                   >
                     취소
                   </button>
-                  <p>{i.isDone}</p>
                 </p>
               </li>
             );

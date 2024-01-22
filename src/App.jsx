@@ -9,11 +9,8 @@ function App() {
   const startContents = () => {
     for (let i = 0; i < localStorage.length; i++) {
       const check = JSON.parse(localStorage.getItem(i + 1));
-      if (check === null) {
-        continue;
-      } else {
-        checkContents.push(check);
-      }
+      console.log(check);
+      checkContents.push(check);
     }
   };
   startContents();
