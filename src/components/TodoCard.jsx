@@ -1,7 +1,7 @@
 import React from "react";
 
-function TodoCard({ contents, setContents, i }) {
-  const deleteTodo = (id) => {
+function TodoCard({ contents, setContents, i, isActive }) {
+  const deletebtn = (id) => {
     const newContents = contents.filter((todo) => {
       return todo.id !== id;
     });
@@ -23,37 +23,29 @@ function TodoCard({ contents, setContents, i }) {
     setContents(check);
   };
 
-  if (i.isDone === false) {
-    return (
-      <li key={i.id} className="todo-card">
-        <h3>{i.title}</h3>
-        <p>{i.content}</p>
-        <p className="todo-btn">
-          <button className="del-btn" onClick={() => deleteTodo(i.id)}>
-            삭제하기
-          </button>
-          <button className="done-btn" onClick={() => toggleBtn(i.id)}>
-            완료
-          </button>
-        </p>
-      </li>
-    );
-  } else {
-    return (
-      <li key={i.id} className="todo-card">
-        <h3>{i.title}</h3>
-        <p>{i.content}</p>
-        <p className="todo-btn">
-          <button className="del-btn" onClick={() => deleteTodo(i.id)}>
-            삭제하기
-          </button>
-          <button className="cancle-btn" onClick={() => toggleBtn(i.id)}>
-            취소
-          </button>
-        </p>
-      </li>
-    );
-  }
+  return (
+    <section className="todolist">
+      {contents.map((i) => {
+        return (
+          <>
+            <h2>{isActive ? "Working...🔥🔥" : "Done..!🎆"}</h2>
+            <li key={i.id} className="todo-card">
+              <h3>{i.title}</h3>
+              <p>{i.content}</p>
+              <p className="todo-btn">
+                <button className="del-btn" onClick={() => deletebtn(i.id)}>
+                  삭제하기
+                </button>
+                <button className="done-btn" onClick={() => toggleBtn(i.id)}>
+                  {isActive ? "완료" : "취소"}
+                </button>
+              </p>
+            </li>
+          </>
+        );
+      })}
+    </section>
+  );
 }
 
 export default TodoCard;
