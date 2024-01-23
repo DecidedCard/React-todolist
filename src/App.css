@@ -90,6 +90,7 @@ h2 {
   height: 50px;
   margin-top: 8px;
   color: var(--bg-300);
+  cursor: pointer;
 }
 
 .todolist {
@@ -127,6 +128,7 @@ h2 {
   background-color: var(--accent-100);
   font-weight: bolder;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .done-btn {
@@ -135,6 +137,7 @@ h2 {
   background-color: white;
   font-weight: bolder;
   color: var(--bg-300);
+  cursor: pointer;
 }
 
 .cancle-btn {
