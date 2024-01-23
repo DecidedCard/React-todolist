@@ -8,8 +8,8 @@ function App() {
 
   const startContents = () => {
     for (let i = 0; i < localStorage.length; i++) {
-      const check = JSON.parse(localStorage.getItem(i + 1));
-      console.log(check);
+      const checkKey = localStorage.key(i);
+      const check = JSON.parse(localStorage.getItem(checkKey));
       checkContents.push(check);
     }
   };
@@ -20,7 +20,6 @@ function App() {
     <div className="main">
       <Header contents={contents} setContents={setContents} />
       <Main contents={contents} setContents={setContents} />
-      <div></div>
     </div>
   );
 }

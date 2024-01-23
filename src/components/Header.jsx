@@ -20,12 +20,11 @@ function Header({ contents, setContents }) {
     } else {
       document.querySelector(".check-content").style.display = "none";
       const newTodo = {
-        id: contents.length + 1,
+        id: Date.now(),
         title,
         content,
         isDone: false,
       };
-      console.log(newTodo);
 
       localStorage.setItem(`${newTodo.id}`, JSON.stringify(newTodo));
 
@@ -59,7 +58,9 @@ function Header({ contents, setContents }) {
               onChange={contentChangeEvent}
             />
           </p>
-          <button className="add-btn">추가하기</button>
+          <button type="submit" className="add-btn">
+            추가하기
+          </button>
         </form>
         <p className="check-content">내용을 입력해주시기 바랍니다.</p>
       </section>
