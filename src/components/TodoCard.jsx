@@ -24,11 +24,14 @@ function TodoCard({ contents, setContents, i, isActive }) {
   };
 
   return (
-    <section className="todolist">
-      {contents.map((i) => {
-        return (
-          <>
-            <h2>{isActive ? "Working...🔥🔥" : "Done..!🎆"}</h2>
+    <>
+      <h2>{isActive ? "Working...🔥🔥" : "Done..!🎆"}</h2>
+      <ul className="card-list">
+        {contents.map((i) => {
+          if (isActive === i.isDone) {
+            return false;
+          }
+          return (
             <li key={i.id} className="todo-card">
               <h3>{i.title}</h3>
               <p>{i.content}</p>
@@ -41,10 +44,10 @@ function TodoCard({ contents, setContents, i, isActive }) {
                 </button>
               </p>
             </li>
-          </>
-        );
-      })}
-    </section>
+          );
+        })}
+      </ul>
+    </>
   );
 }
 

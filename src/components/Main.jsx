@@ -4,12 +4,18 @@ import TodoCard from "./TodoCard";
 function Main({ contents, setContents }) {
   return (
     <main>
-      <TodoCard contents={contents} setContents={setContents} isActive={true} />
-      <TodoCard
-        contents={contents}
-        setContents={setContents}
-        isActive={false}
-      />
+      <section className="todolist">
+        <TodoCard
+          contents={contents}
+          setContents={setContents}
+          isActive={true}
+        />
+        <TodoCard
+          contents={contents}
+          setContents={setContents}
+          isActive={false}
+        />
+      </section>
     </main>
   );
 }
