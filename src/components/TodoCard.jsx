@@ -6,7 +6,6 @@ function TodoCard({ contents, setContents, i, isActive }) {
       return todo.id !== id;
     });
     localStorage.removeItem(id);
-    console.log(id);
     setContents(newContents);
   };
 
